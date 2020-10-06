@@ -1,6 +1,15 @@
 const express = require ('express');
 const mongoose = require ('mongoose');
+const users = require('./routes/api/users');
+const profile = require('./routes/api/profile');
+const posts = require('./routes/api/posts');
+
 const app = express();
+
+const bodyParser = require('body-parser');
+// Body parser middleware HTML -> json
+app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.json());
 
 // DB config
 const db = require('./config/keys').mongoURI;
@@ -16,6 +25,12 @@ mongoose
 // first parameter is route: '/'
 // second paramter is an arrow function with two parameters: req & res
 app.get('/', (req, res) => res.send('Hello world!'));
+
+// route to appropriate files
+app.use('/api/users', users);
+app.use('/api/profile', profile);
+app.use('/api/posts', posts);
+
 
 const port = 8080;
 // tell express to listen to this port number
