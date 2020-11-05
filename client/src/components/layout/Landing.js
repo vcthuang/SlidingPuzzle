@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
+import SlidingPuzzle from '../Puzzle/SlidingPuzzle';
 
 class Landing extends Component {
   render() {
@@ -12,6 +13,9 @@ class Landing extends Component {
                 <h1 className="display-3 mb-4">Chinese Sliding Puzzle
                 </h1>
                 <p className="lead">Let's learn Chinese characters via sliding puzzles</p>
+                <hr />           
+                <SlidingPuzzle />
+                <p></p>
                 <hr />
                 <Link to="/register" className="btn btn-lg btn-info mr-2">Sign Up</Link>
                 <Link to="/login" className="btn btn-lg btn-light">Login</Link>
