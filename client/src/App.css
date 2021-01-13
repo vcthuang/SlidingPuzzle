@@ -38,7 +38,6 @@ img {
   color: #bbb !important;
 }
 
-
 #puzzle {
   display: flex;
   background-color: #114b5f;
@@ -78,7 +77,7 @@ img {
   padding-top: 3rem;
 }
 
-.empty {
+#puzzleUL .empty {
   background: #DAD4EF;
   border: 2px solid #114B5F;
 }
